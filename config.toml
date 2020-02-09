@@ -1,17 +1,17 @@
 baseURL = "https://trusting-euclid-8a78d1.netlify.com/"
 languageCode = "en-us"
-title = "Minimal"
+title = "From E to D"
 theme = "minimal"
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 
 [params]
-    author = "Calin Tataru"
-    description = "Personal blog theme powered by Hugo"
+    author = "Karen V. Chu Sam"
+    description = "A blog about learning R and life afterwards"
     githubUsername = "#"
     accent = "grey"
     showBorder = true
-    backgroundColor = "white"
+    backgroundColor = "PT Sans"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "default"
@@ -46,22 +46,9 @@ googleAnalytics = ""
     name = "envelope-o"
     weight = 1
 
-[[menu.icon]]
-    url = "https://github.com/username/"
-    name = "github"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://twitter.com/username/"
-    name = "twitter"
-    weight = 3
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/username/"
     name = "linkedin"
-    weight = 4
+    weight = 2
 
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
-    name = "stack-overflow"
-    weight = 5
