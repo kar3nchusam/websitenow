@@ -11,7 +11,7 @@ Last year, I started doing the online course *Data Science* offered by Coursera.
 
 
   
+<br><br><br><br><br>
   
-  
-Since we are all *work in progress*, please also take this blog as a *work in progress*. Let me know your thoughts about it and any suggestions or recommendations would be very welcome! 
+Please also take this blog as a *work in progress*. Let me know your thoughts about it and any suggestions or recommendations would be very welcome! 
 
