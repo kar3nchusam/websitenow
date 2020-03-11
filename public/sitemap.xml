@@ -3,56 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/categories/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/post/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/tags/r-markdown/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/tags/website/</loc>
+    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/tags/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://trusting-euclid-8a78d1.netlify.com/post/new-post/</loc>
+    <loc>/post/new-post/</loc>
   </url>
   
 </urlset>

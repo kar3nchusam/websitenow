@@ -2,39 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on From E to D</title>
-    <link>https://trusting-euclid-8a78d1.netlify.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://trusting-euclid-8a78d1.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>plot</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/tags/plot/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://trusting-euclid-8a78d1.netlify.com/tags/plot/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/tags/r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <link>/tags/r-markdown/</link>
+      <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://trusting-euclid-8a78d1.netlify.com/tags/r-markdown/</guid>
+      <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>regression</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/tags/regression/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Website</title>
+      <link>/tags/website/</link>
+      <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://trusting-euclid-8a78d1.netlify.com/tags/regression/</guid>
+      <guid>/tags/website/</guid>
       <description></description>
     </item>
     

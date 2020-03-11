@@ -2,42 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>From E to D</title>
-    <link>https://trusting-euclid-8a78d1.netlify.com/</link>
+    <link>/</link>
     <description>Recent content on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://trusting-euclid-8a78d1.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>My very first post and how I created this website</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://trusting-euclid-8a78d1.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>R MarkdownI am very excited to be writing my very first post of this blog and the very first blog post ever! I created this blog because I noticed that it was hard to keep myself accountable when I learn R by myself. Life happens, distractions are unavoidable and discipline is a scarce resource that we need to cultivate. So, the motivation of creating this post is to keep myself accountable and track myself!</description>
     </item>
     
     <item>
       <title>About the author and the goal of this blog</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://trusting-euclid-8a78d1.netlify.com/about/</guid>
+      <guid>/about/</guid>
       <description>From Economics to Data
-My name is Karen and I am an economist. I completed my undergraduate studies at the University of Mannheim and obtained my master&amp;rsquo;s degree from Queen&amp;rsquo;s University. At university, statistics and econometrics weren&amp;rsquo;t exactly my forte. Things were very theoretical and I couldn&amp;rsquo;t see how I could use all those complex tools outside the academia. However, all of a sudden people started talking about data science, machine learning and how data science was the sexiest job of the 21st century.</description>
+My name is Karen and I am an economist. At university, statistics and econometrics weren&amp;rsquo;t exactly my forte. Things were very theoretical and I couldn&amp;rsquo;t see how I could apply all those complex tools outside the academia. However, all of a sudden people started talking about data science, machine learning and how data science was the sexiest job of the 21st century. So, yeah, I wanted to be sexy too and that&amp;rsquo;s how all started!</description>
     </item>
     
     <item>
       <title>New Post</title>
-      <link>https://trusting-euclid-8a78d1.netlify.com/post/new-post/</link>
+      <link>/post/new-post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://trusting-euclid-8a78d1.netlify.com/post/new-post/</guid>
+      <guid>/post/new-post/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details n #using R Markdown see http://rmarkdown.rstudio.com.
 When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
     </item>
