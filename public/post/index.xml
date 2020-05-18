@@ -20,14 +20,5 @@
       <description>I am very excited to be writing my first post of this blog and my very first blog post ever! I created this blog because I noticed that it was hard to keep myself accountable when I learn R by myself. Life happens, distractions are unavoidable and discipline is a scarce resource that takes time to cultivate. So, my motivation of creating this blog is to keep myself accountable and track myself!</description>
     </item>
     
-    <item>
-      <title>dplyr</title>
-      <link>https://frometod.com/post/dplyr/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://frometod.com/post/dplyr/</guid>
-      <description>R MarkdownSo it’s been about more than two months since my fist blog post. The lockdown during this coronavirus kept me a little bit busy emotionally at the beginning but I’m now already used to this normality and enjoying the current state. The lockdown has been great for productivity! I learned how to use the dplyr() package, did the Statistical Inferece course from the Data Science specialization on Coursera and now I’m about to finish Regression Models from Coursera as well.</description>
-    </item>
-    
   </channel>
 </rss>
