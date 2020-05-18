@@ -2,39 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on From E to D</title>
-    <link>/tags/</link>
+    <link>https://frometod.com/tags/</link>
     <description>Recent content in Tags on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 May 2020 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frometod.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>dplyr</title>
-      <link>/tags/dplyr/</link>
-      <pubDate>Mon, 18 May 2020 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/dplyr/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
+      <link>https://frometod.com/tags/r-markdown/</link>
       <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>https://frometod.com/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Website</title>
-      <link>/tags/website/</link>
+      <link>https://frometod.com/tags/website/</link>
       <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>/tags/website/</guid>
+      <guid>https://frometod.com/tags/website/</guid>
       <description></description>
     </item>
     
