@@ -6,10 +6,19 @@
     <description>Recent content on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2020 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2020 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Transformation with dplyr</title>
+      <link>/post/second-post/</link>
+      <pubDate>Mon, 18 May 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/post/second-post/</guid>
+      <description>So it’s been about more than two months since my fist blog post. The lockdown during this coronavirus kept me a little bit busy emotionally at the beginning but I’m now already used to this normality and enjoying the current state. The lockdown has been great for productivity! I learned how to use the dplyr() package, did the Statistical Inferece course from the Data Science specialization on Coursera and now I’m about to finish Regression Models from Coursera as well.</description>
+    </item>
     
     <item>
       <title>My very first post and how I created this website</title>
@@ -21,6 +30,15 @@
     </item>
     
     <item>
+      <title></title>
+      <link>/post/second/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/second/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>About the author and the goal of this blog</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -28,6 +46,16 @@
       <guid>/about/</guid>
       <description>From Economics to Data
 My name is Karen and I am an economist. At university, statistics and econometrics weren&amp;rsquo;t exactly my forte. Things were very theoretical and I couldn&amp;rsquo;t see how I could apply all those complex tools outside the academia. However, all of a sudden people started talking about data science, machine learning and how data science was the sexiest job of the 21st century. So, yeah, I wanted to be sexy too and that&amp;rsquo;s how all started!</description>
+    </item>
+    
+    <item>
+      <title>new</title>
+      <link>/post/post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/post/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
     </item>
     
   </channel>

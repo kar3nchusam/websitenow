@@ -1,0 +1,343 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Data Transformation with dplyr},
+  pdfauthor={Karen Chu Sam},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Data Transformation with dplyr}
+\author{Karen Chu Sam}
+\date{2020-03-27T21:13:14-05:00}
+
+\begin{document}
+\maketitle
+
+So it's been about more than one month since I last published in the
+blog. The lockdown during this coronavirus has kept me a little bit busy
+emotionally, but now I've learned to live with all the coronavirus news
+going around and to enjoy the current state of the lockdown.
+
+In the last month, I've been juggling between Statistical Inference from
+the Data Science specialization in \emph{Coursera} and learning how to
+use the dplyr package by following \emph{R for Data Science} (Wickham \&
+Grolemund, 2016). The book is pretty good to learn about the tools for
+data science. Furthermore, the book provides a good amount of exercises
+to practice and it complements the course on \emph{Coursera}. I can
+strongly recommend doing the exercises in the book because that's how
+you internalize and digest the things learned.
+
+In this post, I will explain about what I've learned with the dplyr
+package and how is the \emph{Statistical Inference} course.
+
+\hypertarget{dplyr}{%
+\section{Dplyr}\label{dplyr}}
+
+We will need the both dplyr and the nycflights13 package. The
+nycflights13 package contains information abouth flights departing from
+New York in 2013. We will use data tables from this package to perform
+data transformation with dplyr. The dlyr package contains a set of
+useful functions to perform the most common data transformation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(nycflights13)}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the flights dataframe is a tibble. This means that\ldots.
+
+dplyr package
+
+dlyr basics: (i)\texttt{filter()}, (ii) arrange(), (iii) select(), (iv)
+mutate(), (v) summarize() and pipeline operator
+
+\hypertarget{filter}{%
+\subsubsection{\texorpdfstring{\texttt{filter()}}{filter()}}\label{filter}}
+
+\texttt{filter()} allows you to filter rows based on their values. So
+let's say you want to filter all flights that either departed or arrived
+on women's international day, March 8th. filter(flights, month==3,
+day==8) You can also use logical operators in the functions. Let's say
+you want to filter flights that departed with more than 1 hour delay.
+filter(flights, ( arr\_delay\textgreater=60)) x \%in\% select every row
+where x is one of the values in y.
+
+\hypertarget{arrange}{%
+\subsubsection{\texorpdfstring{\texttt{arrange()}}{arrange()}}\label{arrange}}
+
+arrange allows you to arrange the rows of the dataframe as you would
+like. So, let's say you want to arrange the flights with a descending
+dep\_time, then you would have to use arrange(flights, desc(dep\_time)).
+
+\hypertarget{select}{%
+\subsubsection{\texorpdfstring{\texttt{select()}}{select()}}\label{select}}
+
+Let's you select columns. So, you're subsetting the dataframe and
+selecting only the variables you're interested in.Say you want to select
+the tail number and the carrier of the flights dataframe.
+select(flights, tail\_num, carrier) Other options useful to know in
+select, when you want to select a couple of columns is select(flights,
+(year:day), -(carrier:air\_time), everything())
+
+\hypertarget{mutate}{%
+\subsection{mutate()}\label{mutate}}
+
+Mutate allows you to add new columns to the dataframe. You will always
+see the new variables or columnes at the end of the dataframe. Following
+the book, I'll just add two columns. mutate(flights, gain=arr\_delay -
+dep\_delay, speed=distance/air\_time*60)
+
+\hypertarget{summarize}{%
+\subsection{summarize()}\label{summarize}}
+
+let's say I want to know the average arrival delay of the flights.
+summarize(flights, delay=mean(arr\_delay, na.rm=TRUE)) This results in
+the mean of the whole column arr\_delay. How about if I want to know the
+average arrival delay per day? I'll have to use the function group\_by.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{by_day <-}\StringTok{ }\KeywordTok{group_by}\NormalTok{(flights, year, month, day)}
+\KeywordTok{summarize}\NormalTok{(by_day, }\DataTypeTok{delay=}\KeywordTok{mean}\NormalTok{(dep_delay, }\DataTypeTok{na.rm=}\OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 365 x 4
+## # Groups:   year, month [12]
+##     year month   day delay
+##    <int> <int> <int> <dbl>
+##  1  2013     1     1 11.5 
+##  2  2013     1     2 13.9 
+##  3  2013     1     3 11.0 
+##  4  2013     1     4  8.95
+##  5  2013     1     5  5.73
+##  6  2013     1     6  7.15
+##  7  2013     1     7  5.42
+##  8  2013     1     8  2.55
+##  9  2013     1     9  2.28
+## 10  2013     1    10  2.84
+## # ... with 355 more rows
+\end{verbatim}
+
+What I am doing with group\_by() is grouping the flights dataframe by
+the 3 columns. But note that it doesn't change how the data looks. So,
+if we call by\_day, we'll see the same dataframe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{by_day}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 19
+## # Groups:   year, month, day [365]
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    <int> <int> <int>    <int>          <int>     <dbl>    <int>          <int>
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay <dbl>,
+## #   carrier <chr>, flight <int>, tailnum <chr>, origin <chr>, dest <chr>,
+## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>
+\end{verbatim}
+
+When I was learning group\_by(), I didn't know about this fact and I
+couldn't understand what was so special about this group\_by(). Then,
+when we call the summarize() funciton on the grouped data, by\_day,
+we'll see that the mean is being calculated per day. We can also
+calcualte the average arrival delay per month. For this, we would have
+to group the data by year and month only.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{by_month <-}\StringTok{ }\KeywordTok{group_by}\NormalTok{(flights, year, month)}
+\KeywordTok{summarize}\NormalTok{(by_month, }\DataTypeTok{delay=}\KeywordTok{mean}\NormalTok{(arr_delay, }\DataTypeTok{na.rm=}\OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 12 x 3
+## # Groups:   year [1]
+##     year month  delay
+##    <int> <int>  <dbl>
+##  1  2013     1  6.13 
+##  2  2013     2  5.61 
+##  3  2013     3  5.81 
+##  4  2013     4 11.2  
+##  5  2013     5  3.52 
+##  6  2013     6 16.5  
+##  7  2013     7 16.7  
+##  8  2013     8  6.04 
+##  9  2013     9 -4.02 
+## 10  2013    10 -0.167
+## 11  2013    11  0.461
+## 12  2013    12 14.9
+\end{verbatim}
+
+Now that we have a basic kwowledge of summarize works with group\_by, it
+is useful to learn the Pipe operator or also \%\textgreater\%. First of
+all, a shortcut for the pipe is ctrl + shift + m. We observe that for
+using the summarize function in combination with group\_by(), we have
+the first group the dataframe and save it in a new variable. Then, we
+proceed to use the new variable in the summarize function(). But that
+just takes a lot of time. So instead, we can combine both code lines
+with the pipe operator:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{group_by}\NormalTok{(year, month, day) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{mean=}\KeywordTok{mean}\NormalTok{(arr_delay, }\DataTypeTok{na.rm=}\OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 365 x 4
+## # Groups:   year, month [12]
+##     year month   day   mean
+##    <int> <int> <int>  <dbl>
+##  1  2013     1     1 12.7  
+##  2  2013     1     2 12.7  
+##  3  2013     1     3  5.73 
+##  4  2013     1     4 -1.93 
+##  5  2013     1     5 -1.53 
+##  6  2013     1     6  4.24 
+##  7  2013     1     7 -4.95 
+##  8  2013     1     8 -3.23 
+##  9  2013     1     9 -0.264
+## 10  2013     1    10 -5.90 
+## # ... with 355 more rows
+\end{verbatim}
+
+The pipe operator allows us to write everything in one section.
+
+INCLUDE THE CHEATSHEET FOR DPLYR
+
+\end{document}

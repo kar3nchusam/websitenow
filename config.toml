@@ -3,7 +3,9 @@ languageCode = "en-us"
 title = "From E to D"
 theme = "minimal"
 #disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+#googleAnalytics = ""
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
     author = "Karen V. Chu Sam"
@@ -13,9 +15,9 @@ googleAnalytics = ""
     showBorder = true
     backgroundColor = "PT Sans"
     font = "Raleway" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+    highlight = false 
+    highlightStyle = "Darkula"
+    highlightLanguages = ["r", "scala", "swift"]
 
 [[menu.main]]
     url = "/"
