@@ -9,20 +9,357 @@ output: html_document
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>So it’s been about more than two months since my fist blog post. The lockdown during this coronavirus kept me a little bit busy emotionally at the beginning but I’m now already used to this normality and enjoying the current state. The lockdown has been great for productivity! I learned how to use the dplyr() package, did the Statistical Inferece course from the Data Science specialization on Coursera and now I’m about to finish Regression Models from Coursera as well.</p>
+<p>In this post, I’ll talk about what I’ve learned from the dplyr package. The Statistical Inferece and Regression Models course are more about stats than R, so maybe I’ll leave that for another post.</p>
+<p>I first learned about dplyr in the Getting and Cleaning Data on Coursera. However, in my opinion, the course doesn’t provided enough exercises to really internalize and digest the different functions in dplyr. I ended up picking up <em>R for Data Science</em> (Wickham &amp; Grolemund, 2016). The book is pretty good for learning the tools for data science and it provides a good amount of exercises to practice. I can really recommend using this book as a complement to the course on Coursera.</p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="/post/dplyr_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<div id="dplyr" class="section level2">
+<h2>Dplyr</h2>
+<p>dplyr is described as “grammar of data manipulation”. Indeed, the dplr package consist of 5 verbs that will help you with data manipulation. As in the book, I’ll use the nycflights13 package to explain the dplyr package. The nycflights13 package contains information about all flights departing from New York in 2013.</p>
+<pre class="r"><code>library(dplyr)
+library(nycflights13)</code></pre>
+<p>From the nycflights13 package, we’ll be mainly using the flights data frame. Let’s have a look at it.</p>
+<pre class="r"><code>flights</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>fights is a tibble, i.e. a data frame that works better with dplyr. A tibble provides many advantages. First, we observe that when we call flights, it only prints out the first 10 rows of the data frame instead of the whole data frame (we don’t need to have a look at every observation of the data frame). Secondly, a tibble shows the type of each variable.</p>
+<p>dplyr has 5 basic verbs: (i)<code>filter()</code>, (ii) <code>arrange()</code>, (iii) <code>select()</code>, (iv) <code>mutate()</code> and (v) <code>summarize()</code>.</p>
+<div id="filter" class="section level3">
+<h3>1. filter()</h3>
+<p>filter() allows you to filter rows based on the values specified in the argument of the function. So let’s say you want to filter all flights that either departed on women’s international day, March 8th.</p>
+<pre class="r"><code>filter(flights, month==3, day==8)</code></pre>
+<pre><code>## # A tibble: 979 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     3     8        1           2355         6      431            440
+##  2  2013     3     8        5           2020       225      226           2318
+##  3  2013     3     8        8           2145       143      240             34
+##  4  2013     3     8        9           2155       134      238             48
+##  5  2013     3     8       11           2230       101      437            312
+##  6  2013     3     8       12           2245        87      127           2356
+##  7  2013     3     8       13           2140       153      144           2305
+##  8  2013     3     8       17           1918       299      237           2216
+##  9  2013     3     8       22           2359        23      447            438
+## 10  2013     3     8       22           2150       152      258             42
+## # ... with 969 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>Filtering flights that departed with more than 1 hour delay.</p>
+<pre class="r"><code>filter(flights, (arr_delay&gt;=60)) %&gt;% 
+    print(width=Inf)</code></pre>
+<pre><code>## # A tibble: 28,317 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      811            630       101     1047            830
+##  2  2013     1     1      848           1835       853     1001           1950
+##  3  2013     1     1      957            733       144     1056            853
+##  4  2013     1     1     1114            900       134     1447           1222
+##  5  2013     1     1     1120            944        96     1331           1213
+##  6  2013     1     1     1255           1200        55     1451           1330
+##  7  2013     1     1     1301           1150        71     1518           1345
+##  8  2013     1     1     1337           1220        77     1649           1531
+##  9  2013     1     1     1342           1320        22     1617           1504
+## 10  2013     1     1     1356           1259        57     1538           1438
+##    arr_delay carrier flight tailnum origin dest  air_time distance  hour minute
+##        &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1       137 MQ        4576 N531MQ  LGA    CLT        118      544     6     30
+##  2       851 MQ        3944 N942MQ  JFK    BWI         41      184    18     35
+##  3       123 UA         856 N534UA  EWR    BOS         37      200     7     33
+##  4       145 UA        1086 N76502  LGA    IAH        248     1416     9      0
+##  5        78 EV        4495 N16561  EWR    SAV        117      708     9     44
+##  6        81 MQ        4601 N518MQ  LGA    BNA        139      764    12      0
+##  7        93 MQ        4646 N542MQ  LGA    MSP        170     1020    11     50
+##  8        78 B6         673 N636JB  JFK    LAX        352     2475    12     20
+##  9        73 EV        3832 N13969  EWR    STL        194      872    13     20
+## 10        60 UA          32 N17128  EWR    ORD        135      719    12     59
+##    time_hour          
+##    &lt;dttm&gt;             
+##  1 2013-01-01 06:00:00
+##  2 2013-01-01 18:00:00
+##  3 2013-01-01 07:00:00
+##  4 2013-01-01 09:00:00
+##  5 2013-01-01 09:00:00
+##  6 2013-01-01 12:00:00
+##  7 2013-01-01 11:00:00
+##  8 2013-01-01 12:00:00
+##  9 2013-01-01 13:00:00
+## 10 2013-01-01 12:00:00
+## # ... with 28,307 more rows</code></pre>
+<p>Filtering flights that have Miami or Atlanta as destination.</p>
+<pre class="r"><code>filter(flights, dest %in% c(&quot;MIA&quot;, &quot;ATL&quot;)) %&gt;% 
+    print(width=Inf)</code></pre>
+<pre><code>## # A tibble: 28,943 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      542            540         2      923            850
+##  2  2013     1     1      554            600        -6      812            837
+##  3  2013     1     1      600            600         0      837            825
+##  4  2013     1     1      606            610        -4      858            910
+##  5  2013     1     1      606            610        -4      837            845
+##  6  2013     1     1      607            607         0      858            915
+##  7  2013     1     1      615            615         0      833            842
+##  8  2013     1     1      623            610        13      920            915
+##  9  2013     1     1      655            700        -5     1002           1020
+## 10  2013     1     1      658            700        -2      944            939
+##    arr_delay carrier flight tailnum origin dest  air_time distance  hour minute
+##        &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1        33 AA        1141 N619AA  JFK    MIA        160     1089     5     40
+##  2       -25 DL         461 N668DN  LGA    ATL        116      762     6      0
+##  3        12 MQ        4650 N542MQ  LGA    ATL        134      762     6      0
+##  4       -12 AA        1895 N633AA  EWR    MIA        152     1085     6     10
+##  5        -8 DL        1743 N3739P  JFK    ATL        128      760     6     10
+##  6       -17 UA        1077 N53442  EWR    MIA        157     1085     6      7
+##  7        -9 DL         575 N326NB  EWR    ATL        120      746     6     15
+##  8         5 AA        1837 N3EMAA  LGA    MIA        153     1096     6     10
+##  9       -18 DL        2003 N997DL  LGA    MIA        161     1096     7      0
+## 10         5 DL        1547 N6703D  LGA    ATL        126      762     7      0
+##    time_hour          
+##    &lt;dttm&gt;             
+##  1 2013-01-01 05:00:00
+##  2 2013-01-01 06:00:00
+##  3 2013-01-01 06:00:00
+##  4 2013-01-01 06:00:00
+##  5 2013-01-01 06:00:00
+##  6 2013-01-01 06:00:00
+##  7 2013-01-01 06:00:00
+##  8 2013-01-01 06:00:00
+##  9 2013-01-01 07:00:00
+## 10 2013-01-01 07:00:00
+## # ... with 28,933 more rows</code></pre>
+<p>For illustration issues, I included <code>%&gt;% print(width=Inf)</code> so that you can see all the columns of the data frame. The line is not necessary to filter the rows and you can leave the part out if you don’t want to have all columns visible.</p>
+</div>
+<div id="arrange" class="section level3">
+<h3>2. arrange()</h3>
+<p>arrange allows you to rearrange the order of the rows. So, let’s say you want to arrange the flights with a descending air time:</p>
+<pre class="r"><code>arrange(flights, desc(arr_time))</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1     2209           2155        14     2400           2337
+##  2  2013     1     5     2116           2130       -14     2400             18
+##  3  2013     1    13     2243           2129        74     2400           2224
+##  4  2013     1    16     2138           2107        31     2400           2322
+##  5  2013     1    17     2256           2249         7     2400           2357
+##  6  2013     1    22     2212           2055        77     2400           2250
+##  7  2013     1    22     2249           2125        84     2400           2250
+##  8  2013     1    25     2055           1725       210     2400           1933
+##  9  2013     1    28     2303           2250        13     2400           2354
+## 10  2013     1    30     2155           1915       160     2400           2137
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<pre class="r"><code>arrange(flights, desc(arr_time, dest))</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1     2209           2155        14     2400           2337
+##  2  2013     1     5     2116           2130       -14     2400             18
+##  3  2013     1    13     2243           2129        74     2400           2224
+##  4  2013     1    16     2138           2107        31     2400           2322
+##  5  2013     1    17     2256           2249         7     2400           2357
+##  6  2013     1    22     2212           2055        77     2400           2250
+##  7  2013     1    22     2249           2125        84     2400           2250
+##  8  2013     1    25     2055           1725       210     2400           1933
+##  9  2013     1    28     2303           2250        13     2400           2354
+## 10  2013     1    30     2155           1915       160     2400           2137
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>Additional columns included in the argument helps to break ties.</p>
+</div>
+<div id="select" class="section level3">
+<h3>3. select()</h3>
+<p>This function allows you to obtain a subset of the data frame by just selecting the columns you’re interested in. Let’s say you want a subset of the data with only the information about the tail number and the carrier of the flights dataframe.</p>
+<pre class="r"><code>select(flights, tailnum, carrier)</code></pre>
+<pre><code>## # A tibble: 336,776 x 2
+##    tailnum carrier
+##    &lt;chr&gt;   &lt;chr&gt;  
+##  1 N14228  UA     
+##  2 N24211  UA     
+##  3 N619AA  AA     
+##  4 N804JB  B6     
+##  5 N668DN  DL     
+##  6 N39463  UA     
+##  7 N516JB  B6     
+##  8 N829AS  EV     
+##  9 N593JB  B6     
+## 10 N3ALAA  AA     
+## # ... with 336,766 more rows</code></pre>
+<p>Or if you want to select all columns except of some of them:</p>
+<pre class="r"><code>select(flights, -(carrier:air_time))</code></pre>
+<pre><code>## # A tibble: 336,776 x 13
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 5 more variables: arr_delay &lt;dbl&gt;,
+## #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>You can also use select() in combination with everything() to move some columns at the beginning of the data frame:</p>
+<pre class="r"><code>select(flights, air_time, distance, hour, everything())</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##    air_time distance  hour  year month   day dep_time sched_dep_time dep_delay
+##       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+##  1      227     1400     5  2013     1     1      517            515         2
+##  2      227     1416     5  2013     1     1      533            529         4
+##  3      160     1089     5  2013     1     1      542            540         2
+##  4      183     1576     5  2013     1     1      544            545        -1
+##  5      116      762     6  2013     1     1      554            600        -6
+##  6      150      719     5  2013     1     1      554            558        -4
+##  7      158     1065     6  2013     1     1      555            600        -5
+##  8       53      229     6  2013     1     1      557            600        -3
+##  9      140      944     6  2013     1     1      557            600        -3
+## 10      138      733     6  2013     1     1      558            600        -2
+## # ... with 336,766 more rows, and 10 more variables: arr_time &lt;int&gt;,
+## #   sched_arr_time &lt;int&gt;, arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+</div>
+</div>
+<div id="mutate" class="section level2">
+<h2>4. mutate()</h2>
+<p>Mutate allows you to add new columns or variables to the dataframe. The new variable will be inserted at the end of the dataframe. Alternatively, you can use transmute() to only keep the new column created.</p>
+<pre class="r"><code>mutate(flights, dist_in_km=distance*1.6093) %&gt;% 
+    print(width=Inf)</code></pre>
+<pre><code>## # A tibble: 336,776 x 20
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+##    arr_delay carrier flight tailnum origin dest  air_time distance  hour minute
+##        &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1        11 UA        1545 N14228  EWR    IAH        227     1400     5     15
+##  2        20 UA        1714 N24211  LGA    IAH        227     1416     5     29
+##  3        33 AA        1141 N619AA  JFK    MIA        160     1089     5     40
+##  4       -18 B6         725 N804JB  JFK    BQN        183     1576     5     45
+##  5       -25 DL         461 N668DN  LGA    ATL        116      762     6      0
+##  6        12 UA        1696 N39463  EWR    ORD        150      719     5     58
+##  7        19 B6         507 N516JB  EWR    FLL        158     1065     6      0
+##  8       -14 EV        5708 N829AS  LGA    IAD         53      229     6      0
+##  9        -8 B6          79 N593JB  JFK    MCO        140      944     6      0
+## 10         8 AA         301 N3ALAA  LGA    ORD        138      733     6      0
+##    time_hour           dist_in_km
+##    &lt;dttm&gt;                   &lt;dbl&gt;
+##  1 2013-01-01 05:00:00      2253.
+##  2 2013-01-01 05:00:00      2279.
+##  3 2013-01-01 05:00:00      1753.
+##  4 2013-01-01 05:00:00      2536.
+##  5 2013-01-01 06:00:00      1226.
+##  6 2013-01-01 05:00:00      1157.
+##  7 2013-01-01 06:00:00      1714.
+##  8 2013-01-01 06:00:00       369.
+##  9 2013-01-01 06:00:00      1519.
+## 10 2013-01-01 06:00:00      1180.
+## # ... with 336,766 more rows</code></pre>
+<pre class="r"><code>transmute(flights, dist_in_km=distance*1.6093)</code></pre>
+<pre><code>## # A tibble: 336,776 x 1
+##    dist_in_km
+##         &lt;dbl&gt;
+##  1      2253.
+##  2      2279.
+##  3      1753.
+##  4      2536.
+##  5      1226.
+##  6      1157.
+##  7      1714.
+##  8       369.
+##  9      1519.
+## 10      1180.
+## # ... with 336,766 more rows</code></pre>
+</div>
+<div id="summarize" class="section level2">
+<h2>5. summarize()</h2>
+<p>Finally, we have summarize() which is usually used with the pipe operator <code>%&gt;%</code> and <code>group_by()</code>. The pipe operator allows you to save the intermediate output of the command and use it on the next line. So, instead of creating several different variables that saves the intermediate result, you can use the pipe operator and just write all the commands in a “chain”. You can notice that I’ve already used the pipe operator in some of the code before. It saves the result of the code on the left hand side of the pipe operator and uses this result on the next line. I would recommend you learning the keyboard shortcut for the pipe operator. In windows, it is Ctrl + Shift + M.</p>
+<p>By using <code>group_by()</code>, you apply functions on a group basis instead of on the whole data frame. Also, it is important to note that <code>group_by()</code> doesn’t change the data frame at all, it still have the same amount of columns and rows.</p>
+<p>Following the examples of the book, let us investigate the average arrival delay of the flights.</p>
+<pre class="r"><code>summarize(flights, delay=mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   delay
+##   &lt;dbl&gt;
+## 1  6.90</code></pre>
+<p>The output we obtain is the average delay over all observaitons.
+What if we want to know the average arrival delay per day? We’ll need to group the data frame by days!</p>
+<pre class="r"><code>group_by(flights, year, month, day) %&gt;% 
+    summarize(avg_delay_by_day=mean(dep_delay, na.rm=TRUE))</code></pre>
+<pre><code>## # A tibble: 365 x 4
+## # Groups:   year, month [12]
+##     year month   day avg_delay_by_day
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;            &lt;dbl&gt;
+##  1  2013     1     1            11.5 
+##  2  2013     1     2            13.9 
+##  3  2013     1     3            11.0 
+##  4  2013     1     4             8.95
+##  5  2013     1     5             5.73
+##  6  2013     1     6             7.15
+##  7  2013     1     7             5.42
+##  8  2013     1     8             2.55
+##  9  2013     1     9             2.28
+## 10  2013     1    10             2.84
+## # ... with 355 more rows</code></pre>
+<p>What I am doing with <code>group_by()</code> is grouping the flights dataframe by year, month and day. The last column of this new output shows us the average delay per day instead the average delay over all observations.</p>
+<p>We can also calcualte the average arrival delay per month. For this, we would have to group the data by year and month.</p>
+<pre class="r"><code>group_by(flights, year, month) %&gt;% 
+    summarize(avg_delay_by_month=mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## # A tibble: 12 x 3
+## # Groups:   year [1]
+##     year month avg_delay_by_month
+##    &lt;int&gt; &lt;int&gt;              &lt;dbl&gt;
+##  1  2013     1              6.13 
+##  2  2013     2              5.61 
+##  3  2013     3              5.81 
+##  4  2013     4             11.2  
+##  5  2013     5              3.52 
+##  6  2013     6             16.5  
+##  7  2013     7             16.7  
+##  8  2013     8              6.04 
+##  9  2013     9             -4.02 
+## 10  2013    10             -0.167
+## 11  2013    11              0.461
+## 12  2013    12             14.9</code></pre>
+<p>Or maybe you think it makes more sense to group by destination:</p>
+<pre class="r"><code>group_by(flights, dest) %&gt;% 
+    summarize(by_dest=mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## # A tibble: 105 x 2
+##    dest  by_dest
+##    &lt;chr&gt;   &lt;dbl&gt;
+##  1 ABQ      4.38
+##  2 ACK      4.85
+##  3 ALB     14.4 
+##  4 ANC     -2.5 
+##  5 ATL     11.3 
+##  6 AUS      6.02
+##  7 AVL      8.00
+##  8 BDL      7.05
+##  9 BGR      8.03
+## 10 BHM     16.9 
+## # ... with 95 more rows</code></pre>
+<p>In this post, I provide a quick overview of dplyr. It naturally takes some time to understand everything and all the commands, but you’ll eventually get it! I can really recommend checking out the book and do the exercises.</p>
 </div>

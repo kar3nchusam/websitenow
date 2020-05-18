@@ -15,7 +15,6 @@ categories: R
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# R Markdown
 
 I am very excited to be writing my first post of this blog and my very first blog post ever! I created this blog because I noticed that it was hard to keep myself accountable when I learn R by myself. Life happens, distractions are unavoidable and discipline is a scarce resource that takes time to cultivate. So, my motivation of creating this blog is to keep myself accountable and track myself! Each week I will post in this website my learning progress in R and how I cultivate my discipline.
 
