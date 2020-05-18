@@ -1,14 +1,13 @@
 ---
-title: "Data Transformation with dplyr"
-author: "Karen Chu Sam"
-date: '2020-05-18T21:13:14-05:00'
+title: "dplyr"
+author: "Karen"
+date: "18/05/2020"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 
 So it's been about more than two months since my fist blog post. The lockdown during this coronavirus kept me a little bit busy emotionally at the beginning but I'm now already used to this normality and enjoying the current state. The lockdown has been great for productivity! I learned how to use the dplyr() package, did the Statistical Inferece course from the Data Science specialization on Coursera and now I'm about to finish Regression Models from Coursera as well. 
 
