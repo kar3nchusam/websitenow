@@ -9,119 +9,22 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-So it's been about more than two months since my fist blog post. The lockdown during this coronavirus kept me a little bit busy emotionally at the beginning but I'm now already used to this normality and enjoying the current state. The lockdown has been great for productivity! I learned how to use the dplyr() package, did the Statistical Inferece course from the Data Science specialization on Coursera and now I'm about to finish Regression Models from Coursera as well. 
+## R Markdown
 
-In this post, I'll talk about what I've learned from the dplyr package. The Statistical Inferece and Regression Models course are more about stats than R, so maybe I'll leave that for another post.
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-I first learned about dplyr in the Getting and Cleaning Data on Coursera. However, in my opinion, the course doesn't provided enough exercises to really internalize and digest the different functions in dplyr. I ended up picking up *R for Data Science* (Wickham & Grolemund, 2016). The book is pretty good for learning the tools for data science and it provides a good amount of exercises to practice. I can really recommend using this book as a complement to the course on Coursera.
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-
-## Dplyr
-
-dplyr is described as "grammar of data manipulation". Indeed, the dplr package consist of 5 verbs that will help you with data manipulation. As in the book, I'll use the nycflights13 package to explain the dplyr package. The nycflights13 package contains information about all flights departing from New York in 2013. 
-
-```{r library, echo=T, message=FALSE}
-library(dplyr)
-library(nycflights13)
+```{r cars}
+summary(cars)
 ```
 
-From the nycflights13 package, we'll be mainly using the flights data frame. Let's have a look at it.
-```{r data, echo=T}
-flights
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
 ```
 
-fights is a tibble, i.e. a data frame that works better with dplyr. A tibble provides many advantages. First, we observe that when we call flights, it only prints out the first 10 rows of the data frame instead of the whole data frame (we don't need to have a look at every observation of the data frame). Secondly, a tibble shows the type of each variable.
-
-dplyr has 5 basic verbs: (i)`filter()`, (ii) `arrange()`, (iii) `select()`, (iv) `mutate()` and (v) `summarize()`.
-
-### 1. filter()
-
-filter() allows you to filter rows based on the values specified in the argument of the function. So let's say you want to filter all flights that either departed on women's international day, March 8th. 
-```{r}
-filter(flights, month==3, day==8)
-```
-
-Filtering flights that departed with more than 1 hour delay. 
-```{r}
-filter(flights, (arr_delay>=60)) %>% 
-    print(width=Inf)
-```
-
-Filtering flights that have Miami or Atlanta as destination.
-```{r}
-filter(flights, dest %in% c("MIA", "ATL")) %>% 
-    print(width=Inf)
-```
-
-For illustration issues, I included `%>% print(width=Inf)` so that you can see all the columns of the data frame. The line is not necessary to filter the rows and you can leave the part out if you don't want to have all columns visible.
-
-
-### 2. arrange()
-arrange allows you to rearrange the order of the rows. So, let's say you want to arrange the flights with a descending air time: 
-```{r}
-arrange(flights, desc(arr_time))
-arrange(flights, desc(arr_time, dest))
-```
-Additional columns included in the argument helps to break ties.
-
-
-### 3. select()
-This function allows you to obtain a subset of the data frame by just selecting the columns you're interested in. Let's say you want a subset of the data with only the information about the tail number and the carrier of the flights dataframe.
-```{r}
-select(flights, tailnum, carrier)
-```
-
-Or if you want to select all columns except of some of them:
-```{r}
-select(flights, -(carrier:air_time))
-```
-You can also use select() in combination with everything() to move some columns at the beginning of the data frame:
-```{r}
-select(flights, air_time, distance, hour, everything())
-```
-
-## 4. mutate()
-Mutate allows you to add new columns or variables to the dataframe. The new variable will be inserted at the end of the dataframe. Alternatively, you can use transmute() to only keep the new column created. 
-```{r}
-mutate(flights, dist_in_km=distance*1.6093) %>% 
-    print(width=Inf)
-transmute(flights, dist_in_km=distance*1.6093)
-```
-
-## 5. summarize()
-Finally, we have summarize() which is usually used with the pipe operator `%>%` and `group_by()`. The pipe operator allows you to save the intermediate output of the command and use it on the next line. So, instead of creating several different variables that saves the intermediate result, you can use the pipe operator and just write all the commands in a "chain". You can notice that I've already used the pipe operator in some of the code before. It saves the result of the code on the left hand side of the pipe operator and uses this result on the next line. I would recommend you learning the keyboard shortcut for the pipe operator. In windows, it is Ctrl + Shift + M.
-
-By using `group_by()`, you apply functions on a group basis instead of on the whole data frame. Also, it is important to note that `group_by()` doesn't change the data frame at all, it still have the same amount of columns and rows. 
-
-Following the examples of the book, let us investigate the average arrival delay of the flights.    
-```{r}
-summarize(flights, delay=mean(arr_delay, na.rm=TRUE))
-```
-
-The output we obtain is the average delay over all observaitons. 
-What if we want to know the average arrival delay per day? We'll need to group the data frame by days! 
-```{r}
-group_by(flights, year, month, day) %>% 
-    summarize(avg_delay_by_day=mean(dep_delay, na.rm=TRUE))
-```
-
-What I am doing with `group_by()` is grouping the flights dataframe by year, month and day. The last column of this new output shows us the average delay per day instead the average delay over all observations.
-
-We can also calcualte the average arrival delay per month. For this, we would have to group the data by year and month. 
-```{r}
-group_by(flights, year, month) %>% 
-    summarize(avg_delay_by_month=mean(arr_delay, na.rm=TRUE))
-```
-
-Or maybe you think it makes more sense to group by destination:
-
-```{r}
-group_by(flights, dest) %>% 
-    summarize(by_dest=mean(arr_delay, na.rm=TRUE))
-```
-
-In this post, I provide a quick overview of dplyr. It naturally takes some time to understand everything and all the commands, but you'll eventually get it! I can really recommend checking out the book and do the exercises. 
-
-
-
-
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
