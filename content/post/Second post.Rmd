@@ -1,0 +1,55 @@
+---
+title: "My very first post and how I created this website"
+author: "Karen Chu Sam"
+date: '2020-03-11T21:13:14-05:00'
+output:
+  html_document:
+    df_print: paged
+tags:
+- R Markdown
+- Website
+categories: R
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+
+I am very excited to be writing my first post of this blog and my very first blog post ever! I created this blog because I noticed that it was hard to keep myself accountable when I learn R by myself. Life happens, distractions are unavoidable and discipline is a scarce resource that takes time to cultivate. So, my motivation of creating this blog is to keep myself accountable and track myself! Each week I will post in this website my learning progress in R and how I cultivate my discipline.
+
+First of all, let me start by telling you how I created this very nice minimalist website in R.
+
+When I first started learning R in my stats class at university and I thought that R was only a programming language for statistical analysis. Little I knew about the power of R... As it so happens, for a course project, my teammate and I would copy the code chunks, the output and the graphs from R, and then paste them in LaTex. It was a very time-consuming process that got us more focused in the correct code for LaTex than in the analysis itself. 
+
+Just recently, while taking the *Data Scientist's Toolbox* in the *Data Science* course from Coursera, I  learned about the existence of R markdown and how useful it could be for small projects and even simple websites such as this. I thought I should give it a chance and try it out.
+
+What is R markdown?
+
+R markdown is markdown language created for R, so that text and R code could be easily integrated in the same document. By doing this, you can be sure that the R code written in the document works.
+
+How did I create the website with R markdown?
+
+To create a webiste with R markdown you need the blogdown package which uses R markdown to create websites. For this website, I used R studio and went to File -> New Project -> New Directory -> Website using blogdown. It opens a window with basic settings for your website and includes a field where you choose a *Hugo* theme. *Hugo* is a static site generator and is the default site generator in blogdown. To choose a theme, go to <https://gohugo.io/> and select the theme you like. Finally, click on create! What happends then is that R installs the blogdown package, blogdown downloads the theme you chose in *Hugo*. Templates in Hugo would normally include the following files: 
+
+        * config.toml
+        * content
+        * static
+        * themes
+        * public
+        
+In the *config.toml* file you will find the fields related to the configuration of the website. For instance, you can set the URL and the title for the website. Since each theme has their respective config.toml file, please refer to the github page of the respective theme to learn about the features of the theme.
+
+The *content* folder is where you can create all the content of the website in R markdown or simply markdown. For instance, the R markdown file I created for this post is in the *content* folder. 
+
+The *static* folder contains the static files of the posts. So, in case I want to add a png file, I would have to save the png file in the static folder.
+
+The *themes* folder has all files related to the theme, such as the CSS file.
+
+Finally, everything that will be published or files that are required to publish the website will be copied automatically in the public folder. You can always find more information about the theme in the respective github of the theme.
+
+To deploy my website, I used <https://www.netlify.com>.
+
+If you need help setting up your website with blogdown, just shoot me a message :) Hope you enjoy my first post in this blog and my very first blog post ever! 
+
+
