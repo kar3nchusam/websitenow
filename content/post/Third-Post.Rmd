@@ -10,7 +10,6 @@ tags:
 - Regression Models
 - Bootstrap
 - Residuals
-- GLM
 categories: R
 ---
 
