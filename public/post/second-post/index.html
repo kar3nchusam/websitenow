@@ -126,6 +126,7 @@
 <p>dplyr is described as “grammar of data manipulation”. Indeed, the dplr package consist of 5 verbs that will help you with data manipulation. As in the book, I’ll use the nycflights13 package to explain the dplyr package. The nycflights13 package contains information about all flights departing from New York in 2013.</p>
 <pre class="r"><code>library(dplyr)
 library(nycflights13)</code></pre>
+<pre><code>## Warning: package &#39;nycflights13&#39; was built under R version 4.0.2</code></pre>
 <p>From the nycflights13 package, we’ll be mainly using the flights data frame. Let’s have a look at it.</p>
 <pre class="r"><code>flights</code></pre>
 <pre><code>## # A tibble: 336,776 x 19
@@ -417,6 +418,7 @@ library(nycflights13)</code></pre>
 What if we want to know the average arrival delay per day? We’ll need to group the data frame by days!</p>
 <pre class="r"><code>group_by(flights, year, month, day) %&gt;% 
     summarize(avg_delay_by_day=mean(dep_delay, na.rm=TRUE))</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;year&#39;, &#39;month&#39; (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 365 x 4
 ## # Groups:   year, month [12]
 ##     year month   day avg_delay_by_day
@@ -436,6 +438,7 @@ What if we want to know the average arrival delay per day? We’ll need to group
 <p>We can also calcualte the average arrival delay per month. For this, we would have to group the data by year and month.</p>
 <pre class="r"><code>group_by(flights, year, month) %&gt;% 
     summarize(avg_delay_by_month=mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;year&#39; (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 12 x 3
 ## # Groups:   year [1]
 ##     year month avg_delay_by_month
@@ -455,6 +458,7 @@ What if we want to know the average arrival delay per day? We’ll need to group
 <p>Or maybe you think it makes more sense to group by destination:</p>
 <pre class="r"><code>group_by(flights, dest) %&gt;% 
     summarize(by_dest=mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 105 x 2
 ##    dest  by_dest
 ##    &lt;chr&gt;   &lt;dbl&gt;
