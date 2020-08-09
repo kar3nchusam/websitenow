@@ -3,8 +3,12 @@ title: Third post
 author: Karen Chu Sam
 date: '2020-08-09'
 slug: third-post
-categories: []
-tags: []
+categories: R
+tags: 
+- Statistical Inference
+- Regression Models
+- Bootstrap
+- Residuals
 ---
 
 
