@@ -18,7 +18,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Third Post: Statistical Inference and Regression Models
-
 Before getting to 3 months without any posts, I thought to myself, I better write my third post soonish, otherwise it would seem that I haven't been productive since the last post. (Well, maybe that's partly true since the corovirus lockdown has been relaxed in Germany :D.)
 
 During this time, I went through two courses from the Data Science Spezialization: Statistical Inference and Regression Models.  
