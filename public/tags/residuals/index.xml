@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Residuals on From E to D</title>
+    <link>/tags/residuals/</link>
+    <description>Recent content in Residuals on From E to D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Aug 2020 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/residuals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Third-Post</title>
+      <link>/post/third-post/</link>
+      <pubDate>Sun, 09 Aug 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/post/third-post/</guid>
+      <description>Third Post: Statistical Inference and Regression ModelsBefore getting to 3 months without any posts, I thought to myself, I better write my third post soonish, otherwise it would seem that I haven’t been productive since the last post. (Well, maybe that’s partly true since the corovirus lockdown has been relaxed in Germany :D.)
+During this time, I went through two courses from the Data Science Spezialization: Statistical Inference and Regression Models.</description>
+    </item>
+    
+  </channel>
+</rss>

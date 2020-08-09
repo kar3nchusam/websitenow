@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on From E to D</title>
-    <link>https://frometod.com/tags/website/</link>
+    <link>/tags/website/</link>
     <description>Recent content in Website on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Mar 2020 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://frometod.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/website/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My very first post and how I created this website</title>
-      <link>https://frometod.com/post/first-post/</link>
+      <link>/post/first-post/</link>
       <pubDate>Wed, 11 Mar 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://frometod.com/post/first-post/</guid>
+      <guid>/post/first-post/</guid>
       <description>I am very excited to be writing my first post of this blog and my very first blog post ever! I created this blog because I noticed that it was hard to keep myself accountable when I learn R by myself. Life happens, distractions are unavoidable and discipline is a scarce resource that takes time to cultivate. So, my motivation of creating this blog is to keep myself accountable and track myself!</description>
     </item>
     

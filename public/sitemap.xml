@@ -3,47 +3,87 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://frometod.com/categories/</loc>
+    <loc>/tags/bootstrap/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/glm/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/regression-models/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/residuals/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/statistical-inference/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/third-post/</loc>
+    <lastmod>2020-08-09T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/second-post/</loc>
+    <lastmod>2020-05-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dplyr/</loc>
+    <lastmod>2020-05-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/first-post/</loc>
     <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frometod.com/</loc>
+    <loc>/tags/r-markdown/</loc>
     <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frometod.com/post/first-post/</loc>
+    <loc>/tags/website/</loc>
     <lastmod>2020-03-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frometod.com/post/</loc>
-    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frometod.com/categories/r/</loc>
-    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frometod.com/tags/r-markdown/</loc>
-    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frometod.com/tags/</loc>
-    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frometod.com/tags/website/</loc>
-    <lastmod>2020-03-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://frometod.com/about/</loc>
+    <loc>/about/</loc>
   </url>
   
 </urlset>
