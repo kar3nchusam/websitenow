@@ -1,30 +1,45 @@
 ---
-title: "Demotivation, losing momentum and back into the motivation loop"
+title: "Sharing the progress of an amateur data scientist"
 author: "Karen Chu Sam"
-date: "02/05/2021"
+date: '2021-05-13'
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+It has been over half a year since my last blog post and I think it's time to end the post drought. Ever since I started this blog, I was planning to write a post every time I finish a course from the Data Science specialization or everytime I have exiting results to share. In August 2020, I started the "Practical Machine Learning" course. The material is challenging for someone who encounters the algorithms for the first time, for a data scientiest newbie the course can't be done in 4 weeks, progress is made slowly and that somehow produced in me some disastisfaction and demotivation. So, I thought to myself, I'll wait a little bit more until I have some exciting results to share. Many months have passed, and I'm not done with it yet. Now, what about this blog post? About two months ago I run into the youtube channel of Ali Abdaal, who in this [youtube video](https://www.youtube.com/watch?v=hv1gOEY3cs4&t=251s) talks about 3 books that changed his life, one of them was "Show your work" from Austin Kleon. Kleon writes in his book that sharing the progress is equally valueable specially in the stage, where there's still lots of learning and the results of any projects are difficult report. In this digital age, not only experts contribute to the information pool, but also amateurs can contribute to something."Amateurs might lack formal training, but they're all lifelong learners, and they make a point of learning in the open so that others can learn from their failures and successes(...). Amateurs are not afraid to make mistake or look ridiculous in public. They're in love, so they don't hesitate to do work that others think of as silly or just plain stupid (...). Because they have little to lose, amateurs are willing to try anything and share the results." Based on this definition of *amateur*, I will from now on consider myself an amateur data scientist and share in this blog post my experience learning the algorithms and how my motivation fluctuated througout the course. This post is addressed to my future me or some other *amateur* out there who is going through a stage in learning, when learning is just happening very slowly.
 
-## R Markdown
+The Practical Machine Learning course is the 8th course from the Data Science Specialization and so far the most interesting course. Week 1 introduces the concepts of prediciton, types of errors and cross validation. Week 2 explains the caret package in R which can be used to separate the data in training and testing set. The package also have the required functions to train the data withe different types of algorithms and make predictions. Week 3 introduces trees, random trees and Model Based predictions. Week 4 explains regularized regressions, combining predictors to make a more accurate model, some forecasting with time series and a quick overview to unsupervised learning. At the end of each week you have as usual a small quizz with 5 questions. However, in most of the cases the questions in the quizz don't cover the material learned during the week, but it rather ask you to do new things, so be prepared to do some googleing.
+The course covers indeed a large variety of concepts or algorithms, and thus, it doesn't explain the math behind the algorithms and the output of the R code is not throughoutly explained. The slides make a good job to reference to plenty of external resources such as books and other websites. I looked into the books "An Introduction to Statistical Learning" by James, Witten, Hastie and Tibshirani and "The Elements of Statistical Learning" by Hastie, Tibshirani and Friedman and both are really great to learn the maths in the algorithms. The course is great for someone who has experience working with different types of algorithms. Nevetheless, for someone encountering this material for the first time, it is hard to follow the videos and understand everything.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+If you find the books too difficult to understand, Josh Starmer uses little math to provide "StatQuest" amazing explanation and intuition behind the algorithms in his youtube channel. Here you can find the link to his channel "https://www.youtube.com/user/joshstarmer". For me, it took me a lot of time to work through each algorithm and really understand what the algorithm is doing. I must also say, that I still don't feel quite confidente with all algorithms explained in the course. The quizzes in the course don't really test what the videos showed you, but rather other concepts. So, just feel prepared to invest a lot of time in the quizzes. The X minutes mentioned there won't be enough.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+For someone encountering the material for the first time, it is pretty challenging to follow just the quick peek of the R-code, because I also
+want to understand how the algorithm works and what is the math behind it. At the beginning of the course I was googleing a lot and bought
+two books "An Introduction to Statistical Learning" by James, Witten, Hastie and Tibshirani and "The Elements of Statistical Learning" by Hastie, Tibshirani and Friedman. Found a the youtube channel where the different algorithms where explained in way more detail. 
+I felt pretty demotivated because I wasn't make the progress I was planning to and thought I felt kind of overwhelmed because the course
+says to take only 1 week to undertand a large variety of algorithms. 
 
-```{r cars}
-summary(cars)
-```
+All these past months I was thinking "well, I'll read the next post as soon as I'm done with the course". But getting the "done" part was always delayed because I needed to google and read a lot to understand the material. Additionally, I wanted to get to a point where I was satistfied with the explanation of the algorithm. This delay really demotivated me and I ended up in a demotivation loop.
 
-## Including Plots
 
-You can also embed plots, for example:
+I got into the demotivation loop, was dissappointed with coursera and continue reading by myself. But was demotivated to keep reading by 
+myself because I was expecting the course the teach me the things I needed. I lost momentum.
+I am not sure at which point I came out of the dissapointment and demotivation loop, but I think I came out from the bad loop and I am now back on track. Motivation is back and hope to keep posting regularly again. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+In March, I found this youtube video from (...) where he introduces the book "Show your work" from Austin kleon. The book is amazing to get some inspiration and motivation. Showing progress of my work is as valuable as showing the final result of my work. So, this really motivated me to write this post and end the drought of posts. 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+1. Don't try to understand the whole algorithm at once. Break it down. If you're working with a book, read one page a day.
+2. Google the concepts. A lot of people went through the same. They have already found a solution to your problems. 
+3. When you're demotivated, try doing some small and easy tasks instead Such as watching the video
+about the things you're learning.
+4. Don't expect to come out of the demotivation loop by doing nothing, that won't happen. The only way to get out of the demotivation loop is by doing a little bit every day. 
+"Waiting for inspiration is just a terrible habit"
+
+It is quite difficult to build up the habit of learning every day just a little bit when you also have a full-time job and I wasn't able to do a little bit every day. The momentum comes and goes, so it not a good strategy to trust the momentum. Instead, build the habit. 
+
+What I am most happy about: Even though I haven't been able to work a little bit every day, I can look at the past year and reflect about the things I've learned. I'm really proud of myself of the new concepts.
+
+
+

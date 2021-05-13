@@ -6,19 +6,18 @@
     <description>Recent content on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Third-Post</title>
-      <link>/post/third-post/</link>
-      <pubDate>Sun, 09 Aug 2020 21:13:14 -0500</pubDate>
+      <title>Sharing the progress of an amateur data scientist</title>
+      <link>/post/fourth-post/</link>
+      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/third-post/</guid>
-      <description>Third Post: Statistical Inference and Regression ModelsBefore getting to 3 months without any posts, I thought to myself, I better write my third post soonish, otherwise it would seem that I haven’t been productive since the last post. (Well, maybe that’s partly true since the corovirus lockdown has been relaxed in Germany :D.)
-During this time, I went through two courses from the Data Science Spezialization: Statistical Inference and Regression Models.</description>
+      <guid>/post/fourth-post/</guid>
+      <description>It has been over half a year since my last blog post and I think it’s time to end the post drought. Ever since I started this blog, I was planning to write a post every time I finish a course from the Data Science specialization or everytime I have exiting results to share. In August 2020, I started the “Practical Machine Learning” course. The material is challenging for someone who encounters the algorithms for the first time, for a data scientiest newbie the course can’t be done in 4 weeks, progress is made slowly and that somehow produced in me some disastisfaction and demotivation.</description>
     </item>
     
     <item>
