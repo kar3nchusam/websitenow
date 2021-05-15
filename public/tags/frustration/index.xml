@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frustration on From E to D</title>
+    <link>/tags/frustration/</link>
+    <description>Recent content in Frustration on From E to D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/frustration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sharing the progress of an amateur data scientist</title>
+      <link>/post/fourth-post/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/fourth-post/</guid>
+      <description>It has been over half a year since my last blog post and it’s time to end the post drought. Ever since I started this blog, it was my goal to write a post every time I finish a course from the Data Science specialization or every time I have exiting results to share. In August 2020, I started the “Practical Machine Learning” course. The material is challenging for someone who encounters the algorithms for the first time, the course can’t be done in 4 weeks for a data scientiest newbie, progress is made slowly and that somehow produced in me some disastisfaction and demotivation.</description>
+    </item>
+    
+  </channel>
+</rss>

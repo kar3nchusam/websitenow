@@ -6,10 +6,37 @@
     <description>Recent content in Tags on From E to D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Amateur data scientist</title>
+      <link>/tags/amateur-data-scientist/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/amateur-data-scientist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frustration</title>
+      <link>/tags/frustration/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/frustration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Motivation</title>
+      <link>/tags/motivation/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/motivation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bootstrap</title>
